@@ -137,6 +137,12 @@ footer{
   transform-origin: top left;
 }
 
+.oneDollar{
+  width: 100px;
+  transform: rotate(90deg);
+  margin-top: 20px;
+}
+
 /* make glow stick next to box left side of near white when money is coming out */
 
 @keyframes bend {
