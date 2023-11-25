@@ -23,6 +23,7 @@ html{
   display: flex;
   justify-content: end;
   align-items: end;
+  position: relative;
 }
 
 .atm{
@@ -106,10 +107,13 @@ li{
   list-style: none;
 }
 
-footer{
-  width: 100vw;
-  height: 1vh;
-  background-color: black;
+
+
+.grassImage{
+  width: 100vw !important;
+  height: 400px;
+  position: absolute;
+  bottom: 120px;
 }
 
 .atm .moneyout {
@@ -117,7 +121,7 @@ footer{
   height: 60px;
   background-color: rgb(42, 192, 130);
   position: absolute;
-  top: 50%;
+  top: 86%;
   left: -4px;
   z-index: -1;
   border-bottom-right-radius: 20px;
@@ -126,7 +130,8 @@ footer{
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
-  transform-origin: top left;   
+  transform-origin: top left; 
+  
 }
 
 .addThisForMoneyOut {
@@ -137,10 +142,22 @@ footer{
   transform-origin: top left;
 }
 
-.oneDollar{
-  width: 100px;
-  transform: rotate(90deg);
-  margin-top: 20px;
+
+.coin{
+  width: 50px;
+  position: absolute;
+  animation-name: coin;
+  animation-duration: 1.2s;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;  
+  animation-delay:1000ms;
+}
+
+.floor{
+  width: 100vw; 
+  height: 50px;
+  background-color: rgb(136, 34, 34);  
 }
 
 /* make glow stick next to box left side of near white when money is coming out */
@@ -152,5 +169,29 @@ footer{
   to {
     transform: rotate(90deg);
     left: 1px;
+  }
+}
+
+
+@media (max-width: 350px){
+  @keyframes coin {
+    from {
+      right: 100px
+    }
+    to {
+      right: 320px;
+      transform: rotate(-360deg) ;    
+    }
+  }
+}
+
+@keyframes coin {
+  from {
+    right: 100px
+  }
+  to {
+    right: 500px;
+    transform: rotate(-360deg) ;    
+    
   }
 }

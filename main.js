@@ -1,14 +1,17 @@
-///if 5$ is clicked...would you like 5 x 1?
-///if 10$ is clicked...would you like 10 ones or 2 fives,
-///if 20$ is clicked..would you like 20 ones, 2 tens, or 4 fives
-///if 50$ is clicked..would you like 5 tens, 50 ones, or 10 fives
-///if 100$ is clicked..would you like 5 twenties, 2 fifties, 100 ones, 20 fives or 20 fives?
-
-//machine should shake a litle bit when money and before money comes out
-///cant enter money when money is in process. alert(your money is already in process)
-
 const screen = document.querySelector('.screen');
 const container = document.querySelector('.container');
+
+const wrapper = document.querySelector('.wrapper')
+
+
+// make this a for loop inside the if statement. create 100 pennies set timout for each coin so they go out seperatly
+function createCoin() {
+  const coin = document.createElement('img')
+  coin.src = 'images/penny.png'
+  coin.classList.add('coin')
+  wrapper.append(coin)
+}
+
 
 function getBodyBtnClick(e) {
   const getTarget = e.target.tagName;
@@ -114,3 +117,7 @@ function giveCoins(getText) {
 
 screen.addEventListener('click', getScreenClick);
 container.addEventListener('click', getBodyBtnClick);
+
+
+
+createCoin()
