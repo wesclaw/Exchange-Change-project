@@ -81,6 +81,34 @@ function giveCoins(getText) {
     ///shoot out 4 dimes
   } else if (getText === '20 nickels') {
     ////shoot out 20 nickels
+  } else if (getText === '5 ones') {
+    ///shoot out 5 bills
+  } else if (getText === '10 ones') {
+    ///shoot out 10 one bills
+  } else if (getText === '2 fives') { 
+    ///shoot out 2 fives
+  } else if (getText === '20 ones') {
+    ///shoot out 2 fives
+  } else if (getText === '2 tens') {
+    ///shoot out 2 tens
+  } else if (getText === '4 fives') {
+    ///shoot out 4 fives
+  } else if (getText === '50 ones') {
+    ///shoot out 50 ones
+  } else if (getText === '5 tens') {
+    ///shoot out 5 tens
+  } else if (getText === '10 fives') {
+    ///shoot out 10 fives
+  }else if(getText === '100 ones') {
+    ///shoot out 100 ones
+  }else if(getText === '2 fifties') {
+    ///shoot out 2 fifties
+  }else if(getText ==='5 twenties'){
+    ///shoot out 5 twenties
+  }else if(getText==='10 tens'){
+    ///shoot out 10 tens
+  }else if(getText==='20 fives') {
+    ///shoot out 20 fives
   }
 }
 
