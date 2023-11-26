@@ -1,17 +1,7 @@
 const screen = document.querySelector('.screen');
 const container = document.querySelector('.container');
-
+const moneyOut = document.querySelector('.moneyout')
 const wrapper = document.querySelector('.wrapper')
-
-
-// make this a for loop inside the if statement. create 100 pennies set timout for each coin so they go out seperatly
-function createCoin() {
-  const coin = document.createElement('img')
-  coin.src = 'images/penny.png'
-  coin.classList.add('coin')
-  wrapper.append(coin)
-}
-
 
 function getBodyBtnClick(e) {
   const getTarget = e.target.tagName;
@@ -77,7 +67,27 @@ function getScreenClick(e) {
 function giveCoins(getText) {
   screen.innerHTML = `<h1>Please wait for your change...</h1>`;
   if (getText === '100 pennies') {
-    ////shoot out 100 pennies
+    moneyOut.classList.remove('addToBend')
+    moneyOut.classList.add('addThisForMoneyOut')
+    for (let i = 0; i <= 100; i++) {
+      setTimeout(() => {
+        const penny = document.createElement('img');
+        penny.src = 'images/penny.png';
+        penny.classList.add('coin');
+        wrapper.append(penny);
+        if (i === 100) {
+          setTimeout(()=>{
+            moneyOut.classList.remove('addThisForMoneyOut')
+            moneyOut.classList.add('addToBend')
+            screen.innerHTML = `<h1>Thank you!</h1>`;
+            setTimeout(()=>{
+              screen.innerHTML = ``; 
+            },3000)
+          },2000)
+        }
+      }, i * 200); 
+    }
+    
   } else if (getText === '4 quarters') {
     ///shoot out 4 quarters
   } else if (getText === '10 dimes') {

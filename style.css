@@ -107,31 +107,18 @@ li{
   list-style: none;
 }
 
-
-
-.grassImage{
-  width: 100vw !important;
-  height: 400px;
-  position: absolute;
-  bottom: 120px;
-}
-
 .atm .moneyout {
-  width: 70px;
+  width: 120px;
   height: 60px;
   background-color: rgb(42, 192, 130);
   position: absolute;
-  top: 86%;
+  top: 76%;
   left: -4px;
   z-index: -1;
   border-bottom-right-radius: 20px;
-  box-shadow: inset 0px 0px 5px rgb(44, 82, 43);
-  animation-name: bend;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-in-out;
-  transform-origin: top left; 
-  
+  /* box-shadow: inset 0px 0px 5px rgb(44, 82, 43); */
+  box-shadow: 1px 1px 10px 1px rgb(44, 82, 43);
+  transition: 1s;
 }
 
 .addThisForMoneyOut {
@@ -140,6 +127,8 @@ li{
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
   transform-origin: top left;
+  transition: 1s;
+  box-shadow: 1px 1px 10px 1px rgb(44, 82, 43);
 }
 
 
@@ -152,12 +141,20 @@ li{
   animation-timing-function: linear;
   animation-fill-mode: forwards;  
   animation-delay:1000ms;
+  z-index: -2;
 }
 
 .floor{
   width: 100vw; 
   height: 50px;
   background-color: rgb(136, 34, 34);  
+}
+
+.addToBend{
+  animation-name: bendBack;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
 }
 
 /* make glow stick next to box left side of near white when money is coming out */
@@ -169,6 +166,14 @@ li{
   to {
     transform: rotate(90deg);
     left: 1px;
+  }
+}
+
+@keyframes bendBack {
+  from{
+    transform: rotate(90deg);
+  }to{
+    transform: rotate(0deg);
   }
 }
 
