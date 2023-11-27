@@ -116,7 +116,6 @@ li{
   left: -4px;
   z-index: -1;
   border-bottom-right-radius: 20px;
-  /* box-shadow: inset 0px 0px 5px rgb(44, 82, 43); */
   box-shadow: 1px 1px 10px 1px rgb(44, 82, 43);
   transition: 1s;
 }
@@ -159,6 +158,55 @@ li{
 
 /* make glow stick next to box left side of near white when money is coming out */
 
+.quarter{
+  width: 120px;
+  position: absolute;
+  bottom: -7px;
+  animation-name: coin;
+  animation-duration: 1.2s;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;  
+  animation-delay:1000ms;
+  z-index: -2;
+}
+
+.dime{
+  width: 40px;
+  position: absolute;
+  bottom: 0px;
+  animation-name: coin;
+  animation-duration: 1.2s;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;  
+  animation-delay:1000ms;
+  z-index: -2;
+}
+
+.nickel{
+  width: 50px;
+  position: absolute;
+  bottom: 0px;
+  animation-name: coin;
+  animation-duration: 1.2s;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;  
+  animation-delay:1000ms;
+  z-index: -2;
+}
+
+.dollar{
+  width: 100px;
+  position: absolute;
+  top: 0px;
+  left: 40%;
+  cursor: grab;
+}
+
+
+
 @keyframes bend {
   from {
     transform: rotate(0deg);
@@ -174,19 +222,6 @@ li{
     transform: rotate(90deg);
   }to{
     transform: rotate(0deg);
-  }
-}
-
-
-@media (max-width: 350px){
-  @keyframes coin {
-    from {
-      right: 100px
-    }
-    to {
-      right: 320px;
-      transform: rotate(-360deg) ;    
-    }
   }
 }
 
