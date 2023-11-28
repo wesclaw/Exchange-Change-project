@@ -2,91 +2,7 @@ const screen = document.querySelector('.screen');
 const container = document.querySelector('.container');
 const moneyOut = document.querySelector('.moneyout')
 const wrapper = document.querySelector('.wrapper')
-const buttons = document.querySelectorAll("button")
-
-// 
-const atm = document.querySelector('.atm')
-const cash = document.querySelector('.cash')
-let isDragging = false;
-
-document.addEventListener('mousedown', function (event) {
-  let dragElement = event.target.closest('.dollar');
-
-  if (!dragElement) return;
-
-  event.preventDefault();
-
-  dragElement.ondragstart = function () {
-    return false;
-  };
-
-  let coords, shiftX, shiftY;
-
-  startDrag(dragElement, event.clientX, event.clientY);
-
-  function onMouseUp() {
-    finishDrag();
-  }
-
-  function onMouseMove(event) {
-    moveAt(event.clientX, event.clientY);
-  }
-
-  function startDrag(element, clientX, clientY) {
-    if (isDragging) {
-      return;
-    }
-
-    isDragging = true;
-
-    document.addEventListener('mousemove', onMouseMove);
-
-    document.addEventListener('mouseup', onMouseUp);
-
-    shiftX = clientX - element.getBoundingClientRect().left;
-    shiftY = clientY - element.getBoundingClientRect().top;
-
-    element.style.position = 'absolute';
-
-    moveAt(clientX, clientY);
-  }
-
-  function finishDrag() {
-    isDragging = false;
-
-    dragElement.style.top =
-      parseInt(dragElement.style.top) + window.pageYOffset + 'px';
-    dragElement.style.position = 'absolute';
-
-    document.removeEventListener('mousemove', onMouseMove);
-    dragElement.removeEventListener('mouseup', onMouseUp);
-    console.log(isDragging)
-  }
-
-  function moveAt(clientX, clientY) {
-    let newX = clientX - shiftX;
-    let newY = clientY - shiftY;
-
-    let newBottom = newY + dragElement.offsetHeight;
-
-    if (newBottom > document.documentElement.clientHeight) {
-      let docBottom = document.documentElement.getBoundingClientRect().bottom;
-
-      let scrollY = Math.min(docBottom - newBottom, 10);
-
-      if (scrollY < 0) scrollY = 0;
-
-      window.scrollBy(0, scrollY);
-    }
-
-    dragElement.style.left = newX + 'px';
-    dragElement.style.top = newY + 'px';
-
-   
-  }
-});
-
-// 
+const buttons = document.querySelectorAll("button") 
 
 function getBodyBtnClick(e) {
   const getTarget = e.target.tagName;
@@ -266,6 +182,7 @@ function giveCoins(getText) {
     }
   } else if (getText === '5 ones') {
     ///shoot out 5 bills
+    
   } else if (getText === '10 ones') {
     ///shoot out 10 one bills
   } else if (getText === '2 fives') { 
