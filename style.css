@@ -18,7 +18,7 @@ html{
 }
 
 .wrapper{
-  width: 80vw;
+  width: 85vw;
   height: 80vh;
   display: flex;
   justify-content: end;
@@ -227,7 +227,7 @@ li{
 
 @keyframes coin {
   from {
-    right: 100px
+    right: 100px;
   }
   to {
     right: 500px;
