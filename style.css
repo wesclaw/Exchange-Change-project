@@ -18,13 +18,13 @@ html{
 }
 
 .wrapper{
-  width: 85vw;
-  height: 80vh;
   display: flex;
-  justify-content: end;
-  align-items: end;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
+
 
 .atm{
   height: 500px;
@@ -132,7 +132,7 @@ li{
 
 
 .coin{
-  width: 50px;
+  width: 45px;
   position: absolute;
   animation-name: coin;
   animation-duration: 1.2s;
@@ -145,7 +145,7 @@ li{
 
 .floor{
   width: 100vw; 
-  height: 50px;
+  height: 5px;
   background-color: rgb(136, 34, 34);  
 }
 
