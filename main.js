@@ -24,7 +24,7 @@ function changeBills(getText) {
   } else if (getText === '5$') {
     screen.innerHTML = ` 
     <p>Exchange To:</p>
-   <button>5 ones</button> `;
+    <button>5 ones</button> `;
   } else if (getText === '10$') {
     screen.innerHTML = ` 
     <p>Exchange To:</p>

@@ -9,14 +9,80 @@ body {
   font-family: sans-serif;
 }
 
-html{
-  overflow-x: hidden;
+.wrapper{
+  /* background-color: green; */
+  border-bottom: 5px solid rgba(0, 0, 0, 0.979);
+}
+
+.atm{
+  height: 500px;
+  width: 250px;
+  background-color: rgb(190, 180, 180);
+  margin: auto;
+  padding: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  position: relative;
 }
 
 .container{
-  text-align: center; 
+  text-align: center;
+  margin-bottom: 20px;
 }
 
+h1{
+  font-size: 1rem;
+  text-align: center;
+}
+
+.screen p{
+  font-size: 1rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.screen{
+  width: 90%;
+  height: 180px;
+  background-color: black;
+  margin: auto;
+  background-color: grey;
+  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.39);
+  margin-top: 20px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  flex-direction: column;
+  color: rgba(0, 0, 0, 0.61); 
+}
+
+.screen button{
+  background-color: transparent;
+  padding: 1px;
+  color: rgba(0, 0, 0, 0.603);
+  border: 1px solid rgba(0, 0, 0, 0.219);
+  cursor: pointer;
+  width: 70%;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.atm .coinmoneyout {
+  width: 60px;
+  height: 100px;
+  background-color: rgb(42, 192, 130);
+  position: absolute;
+  bottom: 0;
+  left: -10px;  
+  /* border-bottom-right-radius: 20px; */
+  box-shadow: 1px 1px 10px 1px rgb(44, 82, 43);
+  transition: 1s;
+}  
+
+
+/* 
 .wrapper{
   display: flex;
   flex-direction: column;
@@ -40,8 +106,8 @@ h1{
   font-size: 1.4rem;
   color: rgb(51, 50, 50);
   padding:10px;
-}
-
+} */
+/* 
 .screen{
   width: 75%;
   margin: auto;
@@ -75,13 +141,13 @@ h1{
   align-items: center;
   flex-direction: column;
   gap: 10px;
-}
+} */
 
-.bills{
+/* .bills{
   padding: 5px;
-}
+} */
 
-.give{
+/* .give{
   background-color: rgba(0, 255, 0, 0.438);
   width: 20%;
   height: 20px;
@@ -95,14 +161,14 @@ h1{
   height: 20px;
   border-radius: 50%;
   box-shadow: inset 0px 0px 5px 0px rgba(3, 24, 7, 0.123); 
-}
+} */
 
-.main{
+/* .main{
   width: 100px;
   height: 100px;
   background-color: green; 
-}
-
+} */
+/* 
 li{
   list-style: none;
 }
@@ -118,9 +184,9 @@ li{
   border-bottom-right-radius: 20px;
   box-shadow: 1px 1px 10px 1px rgb(44, 82, 43);
   transition: 1s;
-}
+} */
 
-.addThisForMoneyOut {
+/* .addThisForMoneyOut {
   animation-name: bend;
   animation-duration: 1s;
   animation-fill-mode: forwards;
@@ -141,9 +207,9 @@ li{
   animation-fill-mode: forwards;  
   animation-delay:1000ms;
   z-index: -2;
-}
+} */
 
-.floor{
+/* .floor{
   width: 100vw; 
   height: 5px;
   background-color: rgb(136, 34, 34);  
@@ -154,11 +220,11 @@ li{
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
-}
+} */
 
 /* make glow stick next to box left side of near white when money is coming out */
 
-.quarter{
+/* .quarter{
   width: 120px;
   position: absolute;
   bottom: -7px;
@@ -203,7 +269,7 @@ li{
   top: 0px;
   left: 40%;
   cursor: grab;
-}
+} */
 
 
 
