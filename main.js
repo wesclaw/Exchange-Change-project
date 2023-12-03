@@ -1,8 +1,12 @@
 const screen = document.querySelector('.screen');
 const container = document.querySelector('.container');
-const moneyOut = document.querySelector('.moneyout')
-const wrapper = document.querySelector('.wrapper')
-const buttons = document.querySelectorAll("button") 
+const moneyOut = document.querySelector('.coinmoneyout')
+const cashmoneyout = document.querySelector('.cashmoneyout')
+const atm = document.querySelector('.atm')
+const buttons = document.querySelectorAll("button")
+
+// get the 50s, 20s, 10s, and 5s cash images and then just paste into place
+
 
 function getBodyBtnClick(e) {
   const getTarget = e.target.tagName;
@@ -71,16 +75,17 @@ function giveCoins(getText) {
   if (getText === '100 pennies') {
     moneyOut.classList.remove('addToBend')
     moneyOut.classList.add('addThisForMoneyOut')
-    for (let i = 0; i <= 100; i++) {
+    for (let i = 0; i < 99; i++) {
       buttons.forEach((btn)=>{
         btn.disabled = true
       })
       setTimeout(() => {
         const penny = document.createElement('img');
         penny.src = 'images/penny.png';
-        penny.classList.add('coin');
-        wrapper.append(penny);
-        if (i === 100) {
+        penny.classList.add('penny');
+        // wrapper.append(penny);
+        atm.append(penny)
+        if (i === 99) {
           setTimeout(()=>{
             moneyOut.classList.remove('addThisForMoneyOut')
             moneyOut.classList.add('addToBend')
@@ -93,14 +98,14 @@ function giveCoins(getText) {
             },2000)
           },2000)
         }
-      }, i * 150); 
+      }, i * 150); ///speed of the coin
     }
     
   } else if (getText === '4 quarters') {
     ///shoot out 4 quarters
     moneyOut.classList.remove('addToBend')
     moneyOut.classList.add('addThisForMoneyOut')
-    for (let i = 0; i <= 4; i++) {
+    for (let i = 0; i <= 3; i++) {
       buttons.forEach((btn)=>{
         btn.disabled = true
       })
@@ -108,8 +113,8 @@ function giveCoins(getText) {
         const quarter = document.createElement('img');
         quarter.src = 'images/quarter2.png';
         quarter.classList.add('quarter');
-        wrapper.append(quarter);
-        if (i === 4) { 
+        atm.append(quarter);
+        if (i === 3) { 
           setTimeout(()=>{ 
             moneyOut.classList.remove('addThisForMoneyOut')
             moneyOut.classList.add('addToBend')
@@ -128,7 +133,7 @@ function giveCoins(getText) {
     ///shoot out 10 dimes
     moneyOut.classList.remove('addToBend')
     moneyOut.classList.add('addThisForMoneyOut')
-    for (let i = 0; i <= 10; i++) {
+    for (let i = 0; i <= 9; i++) {
       buttons.forEach((btn)=>{
         btn.disabled = true
       })
@@ -136,8 +141,8 @@ function giveCoins(getText) {
         const dime = document.createElement('img');
         dime.src = 'images/dime.png';
         dime.classList.add('dime');
-        wrapper.append(dime);
-        if (i === 10) { 
+        atm.append(dime);
+        if (i === 9) { 
           setTimeout(()=>{ 
             moneyOut.classList.remove('addThisForMoneyOut')
             moneyOut.classList.add('addToBend')
@@ -156,7 +161,7 @@ function giveCoins(getText) {
     ////shoot out 20 nickels
     moneyOut.classList.remove('addToBend')
     moneyOut.classList.add('addThisForMoneyOut')
-    for (let i = 0; i <= 20; i++) {
+    for (let i = 0; i <= 19; i++) {
       buttons.forEach((btn)=>{
         btn.disabled = true
       })
@@ -164,7 +169,7 @@ function giveCoins(getText) {
         const nickel = document.createElement('img');
         nickel.src = 'images/nickel.png';
         nickel.classList.add('nickel');
-        wrapper.append(nickel);
+        atm.append(nickel);
         if (i === 20) { 
           setTimeout(()=>{ 
             moneyOut.classList.remove('addThisForMoneyOut')
@@ -182,25 +187,154 @@ function giveCoins(getText) {
     }
   } else if (getText === '5 ones') {
     ///shoot out 5 bills
-    
+    cashmoneyout.classList.remove('addToBend')
+    cashmoneyout.classList.add('addThisForMoneyOut')
+    for (let i = 0; i <= 4; i++) {
+      buttons.forEach((btn)=>{
+        btn.disabled = true
+      })
+      setTimeout(() => { 
+        const cash = document.createElement('img');
+        cash.src = 'images/one_dollar.png';
+        cash.classList.add('cash');
+        atm.append(cash);
+        if (i === 4) { 
+          setTimeout(()=>{ 
+            cashmoneyout.classList.remove('addThisForMoneyOut')
+            cashmoneyout.classList.add('addToBend')
+            screen.innerHTML = `<h1>Thank you!</h1>`;
+            setTimeout(()=>{
+              screen.innerHTML = ``; 
+              buttons.forEach((btn)=>{
+                btn.disabled = false
+              })
+            },2000)
+          },2000)
+        }
+      }, i * 500); 
+    }
   } else if (getText === '10 ones') {
     ///shoot out 10 one bills
+    cashmoneyout.classList.remove('addToBend')
+    cashmoneyout.classList.add('addThisForMoneyOut')
+    for (let i = 0; i <= 9; i++) {
+      buttons.forEach((btn)=>{
+        btn.disabled = true
+      })
+      setTimeout(() => { 
+        const cash = document.createElement('img');
+        cash.src = 'images/one_dollar.png';
+        cash.classList.add('cash');
+        atm.append(cash);
+        if (i === 9) { 
+          setTimeout(()=>{ 
+            cashmoneyout.classList.remove('addThisForMoneyOut')
+            cashmoneyout.classList.add('addToBend')
+            screen.innerHTML = `<h1>Thank you!</h1>`;
+            setTimeout(()=>{
+              screen.innerHTML = ``; 
+              buttons.forEach((btn)=>{
+                btn.disabled = false
+              })
+            },2000)
+          },2000)
+        }
+      }, i * 500); 
+    }
   } else if (getText === '2 fives') { 
     ///shoot out 2 fives
   } else if (getText === '20 ones') {
     ///shoot out 2 fives
+    cashmoneyout.classList.remove('addToBend')
+    cashmoneyout.classList.add('addThisForMoneyOut')
+    for (let i = 0; i <= 19; i++) {
+      buttons.forEach((btn)=>{
+        btn.disabled = true
+      })
+      setTimeout(() => { 
+        const cash = document.createElement('img');
+        cash.src = 'images/one_dollar.png';
+        cash.classList.add('cash');
+        atm.append(cash);
+        if (i === 19) { 
+          setTimeout(()=>{ 
+            cashmoneyout.classList.remove('addThisForMoneyOut')
+            cashmoneyout.classList.add('addToBend')
+            screen.innerHTML = `<h1>Thank you!</h1>`;
+            setTimeout(()=>{
+              screen.innerHTML = ``; 
+              buttons.forEach((btn)=>{
+                btn.disabled = false
+              })
+            },2000)
+          },2000)
+        }
+      }, i * 500); 
+    }
   } else if (getText === '2 tens') {
     ///shoot out 2 tens
   } else if (getText === '4 fives') {
     ///shoot out 4 fives
   } else if (getText === '50 ones') {
     ///shoot out 50 ones
+    cashmoneyout.classList.remove('addToBend')
+    cashmoneyout.classList.add('addThisForMoneyOut')
+    for (let i = 0; i <= 49; i++) {
+      buttons.forEach((btn)=>{
+        btn.disabled = true
+      })
+      setTimeout(() => { 
+        const cash = document.createElement('img');
+        cash.src = 'images/one_dollar.png';
+        cash.classList.add('cash');
+        atm.append(cash);
+        if (i === 49) { 
+          setTimeout(()=>{ 
+            cashmoneyout.classList.remove('addThisForMoneyOut')
+            cashmoneyout.classList.add('addToBend')
+            screen.innerHTML = `<h1>Thank you!</h1>`;
+            setTimeout(()=>{
+              screen.innerHTML = ``; 
+              buttons.forEach((btn)=>{
+                btn.disabled = false
+              })
+            },2000)
+          },2000)
+        }
+      }, i * 500); 
+    }
   } else if (getText === '5 tens') {
     ///shoot out 5 tens
   } else if (getText === '10 fives') {
     ///shoot out 10 fives
   }else if(getText === '100 ones') {
     ///shoot out 100 ones
+    cashmoneyout.classList.remove('addToBend')
+    cashmoneyout.classList.add('addThisForMoneyOut')
+    for (let i = 0; i <= 99; i++) {
+      buttons.forEach((btn)=>{
+        btn.disabled = true
+      })
+      setTimeout(() => { 
+        const cash = document.createElement('img');
+        cash.src = 'images/one_dollar.png';
+        cash.classList.add('cash');
+        atm.append(cash);
+        if (i === 99) { 
+          setTimeout(()=>{ 
+            cashmoneyout.classList.remove('addThisForMoneyOut')
+            cashmoneyout.classList.add('addToBend')
+            screen.innerHTML = `<h1>Thank you!</h1>`;
+            setTimeout(()=>{
+              screen.innerHTML = ``; 
+              buttons.forEach((btn)=>{
+                btn.disabled = false
+              })
+            },2000)
+          },2000)
+        }
+      }, i * 100); 
+    }
   }else if(getText === '2 fifties') {
     ///shoot out 2 fifties
   }else if(getText ==='5 twenties'){

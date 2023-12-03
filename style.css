@@ -10,7 +10,6 @@ body {
 }
 
 .wrapper{
-  /* background-color: green; */
   border-bottom: 5px solid rgba(0, 0, 0, 0.979);
 }
 
@@ -70,162 +69,101 @@ h1{
 }
 
 .atm .coinmoneyout {
-  width: 60px;
-  height: 100px;
+  width: 30px;
+  height: 130px;
   background-color: rgb(42, 192, 130);
   position: absolute;
   bottom: 0;
-  left: -10px;  
-  /* border-bottom-right-radius: 20px; */
-  box-shadow: 1px 1px 10px 1px rgb(44, 82, 43);
-  transition: 1s;
+  left: -8px;  
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  box-shadow: 1px 1px 10px 1px rgba(44, 82, 43, 0.541);
+  transition: 1.2s;
+  z-index: -1;
+  transform-origin: top; 
 }  
 
-
-/* 
-.wrapper{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-
-.atm{
-  height: 500px;
-  width: 250px;
-  background-color: rgb(190, 180, 180);
-  text-align: center;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.568);
-  padding: 10px;
-  position: relative;
-}
-
-h1{
-  font-size: 1.4rem;
-  color: rgb(51, 50, 50);
-  padding:10px;
-} */
-/* 
-.screen{
-  width: 75%;
-  margin: auto;
-  height: 150px;
-  background-color: grey;
-  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.39);
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  flex-direction: column;
-  color: rgba(0, 0, 0, 0.61); 
-}
-
-.screen button{
-  background-color: transparent;
-  padding: 1px;
-  color: rgba(0, 0, 0, 0.603);
-  border: 1px solid rgba(0, 0, 0, 0.219);
-  cursor: pointer;
-  width: 70%;
-  margin-top: 2px;
-}
-
-.enterandexit{
-  width: 100%;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
-} */
-
-/* .bills{
-  padding: 5px;
-} */
-
-/* .give{
-  background-color: rgba(0, 255, 0, 0.438);
-  width: 20%;
-  height: 20px;
-  border-radius: 50%;
-  box-shadow: inset 0px 0px 5px 0px rgba(3, 24, 7, 0.123); 
-}
-
-.take{
-  background-color: rgba(218, 165, 32, 0.589);
-  width: 20%;
-  height: 20px;
-  border-radius: 50%;
-  box-shadow: inset 0px 0px 5px 0px rgba(3, 24, 7, 0.123); 
-} */
-
-/* .main{
-  width: 100px;
-  height: 100px;
-  background-color: green; 
-} */
-/* 
-li{
-  list-style: none;
-}
-
-.atm .moneyout {
-  width: 120px;
-  height: 60px;
-  background-color: rgb(42, 192, 130);
+.atm .cashmoneyout {
+  width: 50px;
+  height: 160px;
+  border-bottom-left-radius: 20px;
+  background-color: rgb(211, 184, 110);
   position: absolute;
-  top: 76%;
-  left: -4px;
+  top: 50px;
+  left: -8px;  
+  transition: 1.2s;
   z-index: -1;
-  border-bottom-right-radius: 20px;
-  box-shadow: 1px 1px 10px 1px rgb(44, 82, 43);
-  transition: 1s;
-} */
+  transform-origin: top;
+  /* transform: rotate(90deg);  */
+}
 
-/* .addThisForMoneyOut {
+.cash{
+  width: 100px;
+  position: absolute;
+  left: -135px;
+  top: 25px;
+  /* display: none; */
+  animation-name: fall;
+  animation-duration: 1.4s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-delay: 1000ms;
+  z-index: -2;
+  opacity: 0;
+}
+
+
+
+@keyframes fall {
+  from {
+    top: 25px;
+    opacity: 1;
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  to {
+    top: 455px;
+    opacity: 1;
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+.bills{
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgba(192, 218, 192, 0.603);
+}
+
+.addThisForMoneyOut {
   animation-name: bend;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
   transform-origin: top left;
   transition: 1s;
-  box-shadow: 1px 1px 10px 1px rgb(44, 82, 43);
 }
 
-
-.coin{
+.penny{
   width: 45px;
   position: absolute;
   animation-name: coin;
-  animation-duration: 1.2s;
+  bottom: 0;
+  animation-duration: 1s;
   animation-direction: alternate;
   animation-timing-function: linear;
   animation-fill-mode: forwards;  
   animation-delay:1000ms;
-  z-index: -2;
-} */
-
-/* .floor{
-  width: 100vw; 
-  height: 5px;
-  background-color: rgb(136, 34, 34);  
-}
+  z-index: -1;
+} 
 
 .addToBend{
   animation-name: bendBack;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
-} */
+} 
 
-/* make glow stick next to box left side of near white when money is coming out */
-
-/* .quarter{
-  width: 120px;
+.quarter{
+  width: 110px;
   position: absolute;
   bottom: -7px;
   animation-name: coin;
@@ -234,9 +172,9 @@ li{
   animation-timing-function: linear;
   animation-fill-mode: forwards;  
   animation-delay:1000ms;
-  z-index: -2;
+  z-index: -1;
 }
-
+ 
 .dime{
   width: 40px;
   position: absolute;
@@ -247,7 +185,7 @@ li{
   animation-timing-function: linear;
   animation-fill-mode: forwards;  
   animation-delay:1000ms;
-  z-index: -2;
+  z-index: -1;
 }
 
 .nickel{
@@ -260,17 +198,8 @@ li{
   animation-timing-function: linear;
   animation-fill-mode: forwards;  
   animation-delay:1000ms;
-  z-index: -2;
+  z-index: -1;
 }
-
-.dollar{
-  width: 100px;
-  position: absolute;
-  top: 0px;
-  left: 40%;
-  cursor: grab;
-} */
-
 
 
 @keyframes bend {
@@ -279,7 +208,6 @@ li{
   }
   to {
     transform: rotate(90deg);
-    left: 1px;
   }
 }
 
@@ -293,10 +221,11 @@ li{
 
 @keyframes coin {
   from {
-    right: 100px;
+   right: 100px;
+    
   }
   to {
-    right: 500px;
+    right: 400px;
     transform: rotate(-360deg) ;    
     
   }
