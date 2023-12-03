@@ -170,7 +170,7 @@ function giveCoins(getText) {
         nickel.src = 'images/nickel.png';
         nickel.classList.add('nickel');
         atm.append(nickel);
-        if (i === 20) { 
+        if (i === 19) { 
           setTimeout(()=>{ 
             moneyOut.classList.remove('addThisForMoneyOut')
             moneyOut.classList.add('addToBend')
@@ -239,7 +239,7 @@ function giveCoins(getText) {
             },2000)
           },2000)
         }
-      }, i * 500); 
+      }, i * 400); 
     }
   } else if (getText === '2 fives') { 
     ///shoot out 2 fives
@@ -301,7 +301,7 @@ function giveCoins(getText) {
             },2000)
           },2000)
         }
-      }, i * 500); 
+      }, i * 200); 
     }
   } else if (getText === '5 tens') {
     ///shoot out 5 tens
