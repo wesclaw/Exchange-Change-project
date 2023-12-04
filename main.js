@@ -75,7 +75,7 @@ function giveCoins(getText) {
   if (getText === '100 pennies') {
     moneyOut.classList.remove('addToBend')
     moneyOut.classList.add('addThisForMoneyOut')
-    for (let i = 0; i < 99; i++) {
+    for (let i = 0; i <= 99; i++) {
       buttons.forEach((btn)=>{
         btn.disabled = true
       })
