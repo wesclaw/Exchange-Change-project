@@ -94,7 +94,6 @@ h1{
   transition: 1.2s;
   z-index: -1;
   transform-origin: top;
-  /* transform: rotate(90deg);  */
 }
 
 .cash{
@@ -102,7 +101,7 @@ h1{
   position: absolute;
   left: -135px;
   top: 25px;
-  /* display: none; */
+  background-color: red;
   animation-name: fall;
   animation-duration: 1.4s;
   animation-timing-function: linear;
@@ -111,7 +110,6 @@ h1{
   z-index: -2;
   opacity: 0;
 }
-
 
 
 @keyframes fall {
