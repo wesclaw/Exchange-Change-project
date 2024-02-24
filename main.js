@@ -5,9 +5,6 @@ const cashmoneyout = document.querySelector('.cashmoneyout')
 const atm = document.querySelector('.atm')
 const buttons = document.querySelectorAll("button")
 
-// get the 50s, 20s, 10s, and 5s cash images and then just paste into place
-
-
 function getBodyBtnClick(e) {
   const getTarget = e.target.tagName;
   const getText = e.target.textContent;
@@ -468,10 +465,61 @@ function giveCoins(getText) {
     }
   }else if(getText === '2 fifties') {
     ///shoot out 2 fifties
-
+    cashmoneyout.classList.remove('addToBend')
+    cashmoneyout.classList.add('addThisForMoneyOut')
+    for (let i = 0; i <= 1; i++) {
+      buttons.forEach((btn)=>{
+        btn.disabled = true
+      })
+      setTimeout(() => { 
+        const cash = document.createElement('img');
+        cash.src = 'images/50-dollar-bill.png';
+        cash.classList.add('cash');
+        atm.append(cash);
+        if (i === 1) { 
+          setTimeout(()=>{ 
+            cashmoneyout.classList.remove('addThisForMoneyOut')
+            cashmoneyout.classList.add('addToBend')
+            screen.innerHTML = `<h1>Thank you!</h1>`;
+            setTimeout(()=>{
+              screen.innerHTML = ``; 
+              buttons.forEach((btn)=>{
+                btn.disabled = false
+              })
+            },2000)
+          },2000)
+        }
+      }, i * 400); 
+    }
 
   }else if(getText ==='5 twenties'){
     ///shoot out 5 twenties
+    cashmoneyout.classList.remove('addToBend')
+    cashmoneyout.classList.add('addThisForMoneyOut')
+    for (let i = 0; i <= 4; i++) {
+      buttons.forEach((btn)=>{
+        btn.disabled = true
+      })
+      setTimeout(() => { 
+        const cash = document.createElement('img');
+        cash.src = 'images/20-dollar-bill.png';
+        cash.classList.add('cash');
+        atm.append(cash);
+        if (i === 4) { 
+          setTimeout(()=>{ 
+            cashmoneyout.classList.remove('addThisForMoneyOut')
+            cashmoneyout.classList.add('addToBend')
+            screen.innerHTML = `<h1>Thank you!</h1>`;
+            setTimeout(()=>{
+              screen.innerHTML = ``; 
+              buttons.forEach((btn)=>{
+                btn.disabled = false
+              })
+            },2000)
+          },2000)
+        }
+      }, i * 400); 
+    }
   }else if(getText==='10 tens'){
     ///shoot out 10 tens
     cashmoneyout.classList.remove('addToBend')
