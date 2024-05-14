@@ -101,7 +101,6 @@ h1{
   position: absolute;
   left: -135px;
   top: 25px;
-  background-color: red;
   animation-name: fall;
   animation-duration: 1.4s;
   animation-timing-function: linear;
